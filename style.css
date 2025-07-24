@@ -234,7 +234,7 @@ a{
 .trustbox{
     background-color: #1b1b1b;
     padding: 50px;
-    width: 500px;
+    width: 70%;
     text-align: start;
     border-radius: 20px;
     box-shadow: 0 5px 10px -5px yellow;
@@ -455,9 +455,14 @@ footer .rightside small {
   }
 
   .trustbox {
-    width: 80%;
-    padding: 30px;
+    width: 50%;
+    height: auto;
   }
+
+  .trustbox h2{
+    font-size: 30px;
+  }
+
 
   footer {
     padding: 30px 15px;
@@ -484,4 +489,5 @@ footer .rightside small {
     max-width: 280px;
     padding: 15px;
   }
+  
 }
