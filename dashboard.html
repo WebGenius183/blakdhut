@@ -45,29 +45,49 @@
   </footer>
 
     <script>
-    async function fetchCryptoData() {
-        const res = await fetch(
-        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1"
-        );
-        const data = await res.json();
+        let previousPrices = {};
 
-        const tableBody = document.querySelector("#crypto-table tbody");
-        tableBody.innerHTML = "";
+        async function fetchCryptoData() {
+        const res = await fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=10&page=1");
+        const data = await res.json();
+        updateCryptoPrices(data);
+        }
+
+        function updateCryptoPrices(data) {
+        const tbody = document.querySelector("#crypto-table tbody");
+        tbody.innerHTML = "";
 
         data.forEach((coin) => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-            <td><img src="${coin.image}" alt="${coin.name} Logo" width="24" height="24" /></td>
-            <td>${coin.name}</td>
-            <td>${coin.symbol.toUpperCase()}</td>
-            <td>$${coin.current_price.toLocaleString()}</td>
-        `;
-        tableBody.appendChild(row);
-        });
-    }
+            const prev = previousPrices[coin.id];
+            const current = coin.current_price;
+            const priceDiff = prev !== undefined ? current - prev : 0;
+            const priceClass = priceDiff > 0 ? "price-up" : priceDiff < 0 ? "price-down" : "price-stable";
 
-    fetchCryptoData(); // initial call
-    setInterval(fetchCryptoData, 10000); // refresh every 10 seconds
+            previousPrices[coin.id] = current;
+
+            const row = document.createElement("tr");
+            row.innerHTML = `
+            <td><img src="${coin.image}" alt="${coin.name}" width="20" style="vertical-align: middle;"> ${coin.name}</td>
+            <td>${coin.symbol.toUpperCase()}</td>
+            <td class="${priceClass}">$${current.toLocaleString()}</td>
+            `;
+
+            const priceCell = row.querySelector("td:last-child");
+
+            if (priceClass !== "price-stable") {
+            setTimeout(() => {
+                priceCell.classList.remove("price-up", "price-down");
+                priceCell.classList.add("price-stable");
+            }, 5000);
+            }
+
+            tbody.appendChild(row);
+        });
+        }
+
+        fetchCryptoData();
+        setInterval(fetchCryptoData, 5000);
+
     </script>
 
 </body>
