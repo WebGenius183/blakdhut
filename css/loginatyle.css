@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+body {
+  background-color: #fffeb3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  background-color: #000000;
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: white;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  color: white;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.options a {
+  color: yellow;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.options a:hover {
+  text-decoration: underline;
+  color: #cab816;
+}
+
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: rgb(255, 255, 220);
+  color: Black;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  margin-top: 15px;
+}
+
+button:hover {
+  background-color: yellow;
+  font-weight: 700;
+}
+
+img{
+    width: 100px;
+}
+
+.form-footer {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+}
+
+.form-footer a {
+  color: yellow;
+  text-decoration: none;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 20px;
+  }
+}

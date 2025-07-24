@@ -1,0 +1,508 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: black;
+    width: 100%;
+}
+
+h1,h2,h3{
+    color: white;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    height: 70px;
+    align-items: center;
+    border-radius: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    box-sizing: border-box;
+    background-color: black;
+    z-index: 1000;
+}
+
+.logo img{
+    width: 150px;
+}
+
+button{
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.signup{
+    border: 2px solid yellow;
+    border-radius: 10px;
+    background-color: yellow;   
+}
+
+.signup a{
+    color: black;
+}
+
+.login{
+    background-color: transparent;   
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.hero{
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 100vh;
+    align-items: center;
+    animation: slidein 1s ;
+    display: flex;
+    box-shadow: 0 5px 5px -5px yellow;
+    justify-content: center;
+}
+
+.left{
+    width: 60%;
+}
+
+.left h2{
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 80px;
+}
+
+.left span{
+    color: yellow;
+}
+
+.left button{
+    background-color: yellow;
+    font-size: 30px;
+    border-radius: 20px;
+    padding: 10px;
+    animation: bounce infinite 2s;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 20px;
+}
+
+.left a{
+    font-size: 25px;
+    color: black;
+}
+
+.right{
+    width: 30%;
+    text-align: center;
+}
+
+.right img{
+    width: 120px;
+    height: auto;
+    animation: bounce 2s infinite;
+}
+
+.how {
+  padding: 60px 20px 80px;
+  font-family: "Roboto Condensed", sans-serif;
+  box-shadow: 0 5px 5px -5px yellow;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.section-title h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: yellow;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+
+}
+
+
+.box {
+  background: yellow;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
+  width: 250px;
+  padding: 30px 25px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+
+.box img {
+  width: 48px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+}
+
+
+.step-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.step-title h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: black;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.step-title h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #222;
+  margin: 0;
+}
+
+
+.mini p {
+  font-size: 16px;
+  line-height: 1.4;
+  color: #000000;
+  margin: 0;
+}
+
+
+.trust{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.title{
+    padding-top: 50px;
+}
+
+.title h3{
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 20px;
+}
+
+.con{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px;
+    justify-items: center;
+    padding-top: 50px;
+}
+
+
+.trustbox img{
+    width: 50px;
+    padding-bottom: 20px;
+}
+
+.trustbox h2{
+    font-size: 40px;
+    padding-bottom: 20px;
+}
+
+.trustbox{
+    background-color: #1b1b1b;
+    padding: 50px;
+    width: 70%;
+    text-align: start;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px -5px yellow;
+    animation: bounce 2s infinite;
+    height: 300px;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+.trustbox span{
+    color: white;
+    font-size: 20px;
+}
+
+.rate {
+    margin-top: 50px;
+    height: 50vh;
+    box-shadow: 0 5px 5px -5px yellow;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    color: white;
+}
+
+.title h2 {
+    font-family: "Playwrite PL", cursive, sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.title h3 {
+    padding-top: 20px;
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+.title img {
+    width: 50px;
+}
+
+.ratebtn {
+    margin-top: 30px;
+}
+
+.telegram-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    padding: 20px 20px;
+    border: 3px solid yellow;
+    border-radius: 20px;
+    width: 300px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    gap: 10px;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+.telegram-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+.telegram-btn:hover {
+    background-color: yellow;
+    color: black;
+    transform: scale(1.03);
+}
+
+footer {
+    background-color: #111;
+    color: #eee;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+footer .top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer .leftside,
+footer .rightside {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer .logo img {
+    width: 120px;
+    height: auto;
+}
+
+footer .socials {
+    display: flex;
+    gap: 15px;
+}
+
+footer .socials a img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+footer .socials a:hover img {
+    transform: scale(1.2);
+}
+
+footer .rightside a {
+    color: #ccc;
+    text-decoration: none;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+footer .rightside a:hover {
+    color: #fff;
+}
+
+footer .rightside small {
+    font-size: 0.9em;
+    color: #777;
+}
+
+
+
+
+/* Animations */
+@keyframes bounce {
+    0%{
+        transform: translatey(0px);
+    }
+    50%{
+        transform: translatey(5px);
+    }
+    100%{
+        transform: translatey(0px);
+    }
+}
+
+@keyframes slidein {
+    0%{
+        transform: translateX(-400px);
+    }
+}
+
+
+
+
+
+
+@media (max-width: 600px) {
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 10px;
+  }
+
+  .logo img {
+    width: 100px;
+    padding-bottom: 20px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .buttons button {
+    width: 90%;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .left, .right {
+    width: 100%;
+    text-align: center;
+  }
+
+  .left h2 {
+    font-size: 32px;
+  }
+
+  .left button {
+    width: 100%;
+    max-width: 280px;
+    font-size: 18px;
+    padding: 12px;
+  }
+  
+  .right{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    align-items: center;
+  }
+
+  .right img {
+    max-width: 80px;
+    max-height: 80px;
+  }
+
+  .con {
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+  }
+
+  .trustbox {
+    width: 70%;
+    height: auto;
+    padding: 25px;
+  }
+
+  .trustbox h2{
+    font-size: 30px;
+  }
+  
+  .trust .title h3{
+    padding: 10px;
+  }
+
+
+  footer {
+    padding: 30px 15px;
+    text-align: center;
+  }
+
+  footer .top {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  footer .leftside,
+  footer .rightside {
+    align-items: center;
+  }
+
+  footer .rightside a,
+  footer .rightside small {
+    font-size: 14px;
+  }
+
+  .telegram-btn {
+    width: 100%;
+    max-width: 280px;
+    padding: 15px;
+  }
+  
+  .rate{
+    padding: 10px;
+    height: auto;
+  }
+
+}

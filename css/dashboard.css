@@ -1,0 +1,134 @@
+*{
+    padding: 0;
+    margin: 0;
+  font-family: "Roboto Condensed", sans-serif;
+
+}
+
+body{
+    background-color: rgb(249, 250, 231);
+}
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: rgb(255, 255, 168)2px solid;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: black;
+}
+
+header img{
+    width: 100px
+}
+
+.content{
+    width: 100%;
+    height: 200px;
+    padding-top: 50px;
+}
+
+.content h2{
+    text-align: center;
+    font-size: 30px;
+    animation: bounce 2s infinite;
+}
+
+button{
+    display: block;
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(255, 255, 168);
+    border: 2px solid rgb(0, 0, 0);
+}
+
+button img{
+    width: 15px;
+    height: 15px;
+}
+
+.tran{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.sell {
+    display: flex;
+    align-content: center;
+    border-radius: 20px;
+    border:  2px solid black;
+    margin-right: 10px;
+    width: 140px;
+    transition: .2s ease-in;
+}
+
+.buy {
+    display: flex;
+    width: 140px;
+    border-radius: 20px;
+    border:  2px solid black;
+    transition: .2s ease-in;
+}
+
+.buy, 
+.sell, 
+a{
+    text-align: center;
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    align-items: center;
+}
+
+.buy:hover,
+.sell:hover{
+    background-color: yellow;
+    font-weight: 700;
+    transform: translateY(-4px);
+}
+
+.transaction{
+    padding: 20px;
+}
+
+.box{
+    height: 37vh;
+    align-content: center;
+    text-align: center;
+}
+
+.box img{
+    width: 50px;
+}
+
+footer{
+    text-align: center;
+    padding: 20px;
+}
+
+
+
+
+
+
+
+@keyframes bounce{
+    0%{
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(-4px);
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
+}
