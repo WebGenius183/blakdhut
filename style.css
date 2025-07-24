@@ -238,7 +238,7 @@ a{
     text-align: start;
     border-radius: 20px;
     box-shadow: 0 5px 10px -5px yellow;
-    animation: bounce 3s infinite;
+    animation: bounce 2s infinite;
     height: 300px;
 }
 
