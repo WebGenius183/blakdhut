@@ -63,7 +63,7 @@ button {
   align-items: center;
   justify-content: center;
   transition: transform 0.2s ease;
-  box-shadow: 0 4px 10px rgba(255, 255, 0, 0.3);
+  box-shadow: 0 2px 2px rgba(255, 255, 0, 0.3);
   cursor: pointer;
 }
 
@@ -130,6 +130,22 @@ footer {
 #crypto-table tbody tr:hover {
   background-color: #1e1e1e;
 }
+
+.price-up {
+  color: #08b308;
+  transition: color 0.3s ease;
+}
+
+.price-down {
+  color: #ff4d4d;
+  transition: color 0.3s ease;
+}
+
+.price-stable {
+  color: white;
+  transition: color 0.3s ease;
+}
+
 
 
 @keyframes bounce {
