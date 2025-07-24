@@ -1,41 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="./css/dashboard.css">
-    <title>Blakdhut Exchange</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="./css/dashboard.css" />
+  <title>Blakdhut Exchange</title>
 </head>
 <body>
-    <header>
-        <a href="./index.html"><img src="./logo.png" alt=""></a>
-    </header>
+  <header>
+    <a href="./index.html"><img src="./logo.png" alt="Blakdhut Logo" /></a>
+  </header>
 
-    <div class="content">
-        <h2> Hello! Emmanuel</h2>
-        <div class="tran">
-            <div class="sell">
-                <button> <img src="./icons/up.png" alt=""></button>
-                <a href="">Sell Crypto</a>
-            </div>
-            <div class="buy">
-                <button> <img src="./icons/down.png" alt=""></button>
-                <a href="">Buy Crypto</a>
-            </div>
-        </div>
+  <div class="content">
+    <h2>Hello, Emmanuel 👋</h2>
+    <div class="tran">
+      <div class="buy">
+        <button><img src="./icons/up.png" alt="Sell" /></button>
+        <a href="#">Sell</a>
+      </div>
+      <div class="buy">
+        <button><img src="./icons/down.png" alt="Buy" /></button>
+        <a href="#">Buy</a>
+      </div>
+      <div class="buy">
+        <button><img src="./icons/bill.png" alt="History" /></button>
+        <a href="#">History</a>
+      </div>
     </div>
+  </div>
 
-    <div class="transaction">
-        <h2>Transaction History</h2>
-        <div class="box">
-            <img src="./icons/bill.png" alt="">
-            <h3>No Transactions Yet</h3>
-        </div>
-    </div>
+<!-- TradingView Crypto Market Overview Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+  {
+    "colorTheme": "dark",
+    "dateRange": "12M",
+    "showChart": false,
+    "locale": "en",
+    "width": "100%",
+    "height": "400",
+    "largeChartUrl": "",
+    "isTransparent": false,
+    "showSymbolLogo": true,
+    "plotLineColorGrowing": "rgba(0, 255, 0, 1)",
+    "plotLineColorFalling": "rgba(255, 0, 0, 1)",
+    "gridLineColor": "rgba(42, 46, 57, 0)",
+    "scaleFontColor": "rgba(120, 123, 134, 1)",
+    "belowLineFillColorGrowing": "rgba(0, 255, 0, 0.12)",
+    "belowLineFillColorFalling": "rgba(255, 0, 0, 0.12)",
+    "symbolActiveColor": "rgba(0, 255, 255, 0.12)",
+    "tabs": [
+      {
+        "title": "Crypto",
+        "symbols": [
+          {
+            "s": "BINANCE:BTCUSDT",
+            "d": "Bitcoin"
+          },
+          {
+            "s": "BINANCE:ETHUSDT",
+            "d": "Ethereum"
+          },
+          {
+            "s": "BINANCE:BNBUSDT",
+            "d": "BNB"
+          },
+          {
+            "s": "BINANCE:XRPUSDT",
+            "d": "XRP"
+          },
+          {
+            "s": "BINANCE:SOLUSDT",
+            "d": "Solana"
+          },
+          {
+            "s": "BINANCE:TONUSDT",
+            "d": "Ton"
+          }
+        ],
+        "originalTitle": "Crypto"
+      }
+    ]
+  }
+  </script>
+</div>
+<!-- TradingView Crypto Market Overview Widget END -->
 
-    <footer>
-        <small>Copyright © 2025 Blakdhut</small>
-    </footer>
+
+
+  <footer>
+    <small>&copy; 2025 Blakdhut Exchange. All rights reserved.</small>
+  </footer>
 </body>
 </html>
