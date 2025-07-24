@@ -6,64 +6,69 @@
 }
 
 body {
-  background-color: #f9f9f9;
-  color: #111;
+  background-color: #0b0b0c;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
-  width: 100%;
+  background-color: #000;
+  padding: 20px;
   display: flex;
   justify-content: center;
-  padding: 20px;
-  background-color: #000;
+  border-bottom: 1px solid #222;
 }
 
 header img {
   width: 100px;
+  filter: brightness(1.2);
 }
 
 .content {
-  text-align: center;
+  flex: 1;
   padding: 40px 20px;
+  text-align: center;
 }
 
 .content h2 {
-  font-size: 32px;
-  margin-bottom: 30px;
+  font-size: 28px;
+  margin-bottom: 40px;
+  color: #f1f1f1;
   animation: bounce 2s infinite;
-  color: #333;
 }
 
-.tran {
+.actions {
   display: flex;
   justify-content: center;
+  gap: 40px;
   flex-wrap: wrap;
-  gap: 30px;
 }
 
-.buy {
+.action-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #f4d800;
+  border: none;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  background-color: #ffff66;
-  border: 2px solid #000;
-  cursor: pointer;
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.2s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 10px rgba(255, 255, 0, 0.3);
+  cursor: pointer;
 }
 
 button:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 button img {
@@ -71,46 +76,74 @@ button img {
   height: 22px;
 }
 
-.buy a {
-  text-decoration: none;
-  color: #111;
+.action-item span {
+  color: #f1f1f1;
   font-weight: 600;
-  transition: color 0.2s ease;
+  font-size: 15px;
 }
-
-
-
 
 footer {
   text-align: center;
   padding: 20px;
   background-color: #000;
-  color: #fff;
+  color: #aaa;
   font-size: 14px;
-  margin-top: 60px;
+  border-top: 1px solid #222;
+  margin-top: auto;
+}
+
+.crypto-prices {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 20px 30px;
+  background: #121212;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.crypto-prices h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.crypto-prices .note {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+#crypto-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#crypto-table th, #crypto-table td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+
+#crypto-table tbody tr:hover {
+  background-color: #1e1e1e;
 }
 
 
-
-/* Bounce animation */
 @keyframes bounce {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
   50% {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
   }
 }
 
 /* Responsive */
 @media (max-width: 500px) {
-  .tran {
-    flex-direction: flex;
+  .actions {
     align-items: center;
-  }
-
-  .transaction .box {
-    width: 100%;
-    max-width: 300px;
   }
 }
