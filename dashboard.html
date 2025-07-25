@@ -34,8 +34,8 @@
 
   <div class="crypto-prices">
     <table id="crypto-table">
-      <tbody>
-        <!-- Crypto data will be inserted here -->
+      <tbody id="crypto-tbody">
+        <tr><td colspan="3" style="text-align:center;">Loading...</td></tr>
       </tbody>
     </table>
   </div>
@@ -45,50 +45,56 @@
   </footer>
 
     <script>
-        let previousPrices = {};
+    let previousPrices = {};
 
-        async function fetchCryptoData() {
-        const res = await fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=10&page=1");
-        const data = await res.json();
-        updateCryptoPrices(data);
+    async function fetchCryptoData() {
+        try {
+            const res = await fetch("https://api.coincap.io/v2/assets?limit=10");
+            const json = await res.json();
+            const data = json.data;
+            updateCryptoPrices(data);
+        } catch (error) {
+            console.error("Failed to fetch data:", error);
         }
+    }
 
-        function updateCryptoPrices(data) {
-        const tbody = document.querySelector("#crypto-table tbody");
+    function updateCryptoPrices(data) {
+        const tbody = document.querySelector("#crypto-tbody");
         tbody.innerHTML = "";
 
         data.forEach((coin) => {
-            const prev = previousPrices[coin.id];
-            const current = coin.current_price;
-            const priceDiff = prev !== undefined ? current - prev : 0;
-            const priceClass = priceDiff > 0 ? "price-up" : priceDiff < 0 ? "price-down" : "price-stable";
+            const id = coin.id;
+            const name = coin.name;
+            const symbol = coin.symbol;
+            const price = parseFloat(coin.priceUsd);
+            const prevPrice = previousPrices[id];
 
-            previousPrices[coin.id] = current;
+            let priceClass = "";
+            if (prevPrice !== undefined) {
+                if (price > prevPrice) {
+                    priceClass = "price-up"; // green
+                } else if (price < prevPrice) {
+                    priceClass = "price-down"; // red
+                }
+            }
+
+            previousPrices[id] = price;
 
             const row = document.createElement("tr");
             row.innerHTML = `
-            <td><img src="${coin.image}" alt="${coin.name}" width="20" style="vertical-align: middle;"> ${coin.name}</td>
-            <td>${coin.symbol.toUpperCase()}</td>
-            <td class="${priceClass}">$${current.toLocaleString()}</td>
+                <td>${name}</td>
+                <td>${symbol}</td>
+                <td class="${priceClass}">$${price.toFixed(2)}</td>
             `;
-
-            const priceCell = row.querySelector("td:last-child");
-
-            if (priceClass !== "price-stable") {
-            setTimeout(() => {
-                priceCell.classList.remove("price-up", "price-down");
-                priceCell.classList.add("price-stable");
-            }, 5000);
-            }
 
             tbody.appendChild(row);
         });
-        }
+    }
 
-        fetchCryptoData();
-        setInterval(fetchCryptoData, 5000);
+    fetchCryptoData();
+    setInterval(fetchCryptoData, 5000);
+</script>
 
-    </script>
 
 </body>
 </html>
