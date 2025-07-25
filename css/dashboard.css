@@ -132,19 +132,14 @@ footer {
 }
 
 .price-up {
-  color: #08b308;
-  transition: color 0.3s ease;
+    color: rgb(3, 197, 3);
+    font-weight: bold;
 }
-
 .price-down {
-  color: #ff4d4d;
-  transition: color 0.3s ease;
+    color: red;
+    font-weight: bold;
 }
 
-.price-stable {
-  color: white;
-  transition: color 0.3s ease;
-}
 
 
 
