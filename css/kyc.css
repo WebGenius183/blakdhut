@@ -1,0 +1,52 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #0c0c0c;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.form {
+  background: #1c1c1c;
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  background: #ffee00;
+  color: black;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #e6d800;
+}
+
+.hidden {
+  display: none;
+}
+
+#confirmation {
+  margin-top: 15px;
+  color: #fbff00;
+  font-weight: bold;
+}

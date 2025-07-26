@@ -1,0 +1,61 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.referral-container {
+  max-width: 500px;
+  width: 100%;
+  background: #111;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 238, 0, 0.3);
+}
+
+h2 {
+  color: #ffee00;
+  margin-bottom: 10px;
+}
+
+.referral-box {
+  display: flex;
+  margin-top: 15px;
+}
+
+.referral-box input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 6px 0 0 6px;
+  background: #222;
+  color: #fff;
+}
+
+.referral-box button {
+  padding: 10px 15px;
+  background-color: #ffee00;
+  color: #000;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+}
+
+.ref-stats {
+  margin-top: 20px;
+  background-color: #1a1a1a;
+  padding: 15px;
+  border-radius: 8px;
+  line-height: 1.6;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #ffee00;
+  text-decoration: none;
+}
