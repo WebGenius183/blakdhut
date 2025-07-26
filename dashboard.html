@@ -8,11 +8,25 @@
   <title>Blakdhut Exchange</title>
 </head>
 <body>
-  <header>
-    <a href="./index.html">
-      <img src="./logo.png" alt="Blakdhut Logo" />
-    </a>
-  </header>
+<header class="navbar">
+  <a href="./index.html" class="logo">
+    <img src="./logo.png" alt="Blakdhut Logo" />
+  </a>
+  <button class="menu-toggle" id="menuToggle">&#9776;</button>
+
+  <div class="overlay" id="menu">
+    <button class="close-btn" id="closeMenu">&times;</button>
+    <nav class="overlay-menu">
+      <a href="./profile.html">Profile</a>
+      <a href="./kyc.html">KYC</a>
+      <a href="./referral.html">Referral</a>
+      <a href="./history.html">History</a>
+      <a href="./support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
+
 
   <main class="content">
     <h2>Hello, Emmanuel 👋</h2>
@@ -92,6 +106,21 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchCryptoData();
     setInterval(fetchCryptoData, 5000);
 });
+
+  const menuToggle = document.getElementById('menuToggle');
+  const menu = document.getElementById('menu');
+  const closeMenu = document.getElementById('closeMenu');
+
+  menuToggle.addEventListener('click', () => {
+    menu.classList.add('show');
+    menuToggle.classList.add('hide');
+  });
+
+  closeMenu.addEventListener('click', () => {
+    menu.classList.remove('show');
+    menuToggle.classList.remove('hide'); 
+  });
+
 </script>
 
 

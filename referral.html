@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Referral - Blakdhut</title>
+  <link rel="stylesheet" href="./css/referral.css">
+</head>
+<body>
+  <div class="referral-container">
+    <h2>Invite & Earn</h2>
+    <p>Share your referral link with friends and earn rewards when they sign up and trade.</p>
+    
+    <div class="referral-box">
+      <input type="text" id="referralLink" readonly value="https://blakdhut.com/signup?ref=USER123">
+      <button onclick="copyReferral()">Copy</button>
+    </div>
+
+    <div class="ref-stats">
+      <p><strong>Referral Earnings:</strong> ₦0.00</p>
+      <p><strong>Total Referrals:</strong> 0</p>
+    </div>
+
+    <a href="dashboard.html" class="back-link">← Back to Dashboard</a>
+  </div>
+
+  <script>
+    function copyReferral() {
+      const link = document.getElementById("referralLink");
+      link.select();
+      link.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("Referral link copied!");
+    }
+  </script>
+</body>
+</html>

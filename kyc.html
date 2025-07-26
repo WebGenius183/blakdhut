@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KYC Verification</title>
+  <link rel="stylesheet" href="./css/kyc.css">
+</head>
+<body>
+  <div class="form">
+    <h2>KYC Verification</h2>
+
+    <label for="kyc_type">Select KYC Type:</label>
+    <select id="kyc_type">
+      <option value="bvn">BVN</option>
+      <option value="nin">NIN</option>
+    </select>
+
+    <label for="kyc_number">Enter BVN/NIN:</label>
+    <input type="text" id="kyc_number" placeholder="Enter BVN or NIN" />
+
+    <button onclick="verifyKYC()">Verify</button>
+    <p id="confirmation" class="hidden"></p>
+  </div>
+
+  <script>
+    function verifyKYC() {
+      const type = document.getElementById("kyc_type").value;
+      const number = document.getElementById("kyc_number").value;
+      const confirmMsg = document.getElementById("confirmation");
+
+      if (!number.trim()) {
+        alert("Please enter your BVN or NIN.");
+        return;
+      }
+
+      confirmMsg.textContent = `✅ Your ${type.toUpperCase()} has been successfully verified! Redirecting to profile...`;
+      confirmMsg.classList.remove("hidden");
+
+      setTimeout(() => {
+        window.location.href = "profile.html";
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
