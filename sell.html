@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/sales.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+PL:wght@100..400&display=swap" rel="stylesheet">
+    <title>Blakdhut Exchange</title>
+    <style>
+    </style>
+</head>
+<body>
+  <div class="form">
+    <form id="buyForm" method="POST" action="">
+      <a href="dashboard.html" style="color: #ffee00;">← Go Back</a>
+      <label for="crypto">Select Crypto Currency</label><br>
+      <select name="crypto" id="crypto">
+        <option value="Choice">Select Coin</option>
+        <option value="Bitcoin">Bitcoin</option>
+        <option value="Etherium">Etherium</option>
+        <option value="Sui">Sui</option>
+        <option value="BNB">BNB</option>
+      </select>
+      <br>
+      <label for="network"> Network</label><br>
+      <select name="network" id="network">
+        <option value="Choice">Select Address Network</option>
+        <option value="Bitcoin">Bitcoin</option>
+        <option value="Etherium">Etherium</option>
+        <option value="Sui">Sui</option>
+        <option value="BNB">BNB</option>
+      </select>
+      <br>
+      <label for="Amount">Amount</label><br>
+      <input type="text" id="Amount" placeholder="Enter Amount in USD">
+      <br>
+      <label for="Bank">Bank</label><br>
+      <input type="text" id="Bank" placeholder="Enter Bank">
+      <br>
+      <label for="number">Account Number</label><br>
+      <input type="text" id="number" placeholder="Enter Account Number">
+
+      <div class="rate">
+        <span>Selling Rate</span>
+        <span>₦1518/$</span>
+      </div>
+
+      <button type="submit">Sell</button>
+    </form>
+  </div>
+
+</body>
+
+<script>
+  document.getElementById('buyForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const crypto = document.getElementById('crypto').value;
+    const network = document.getElementById('network').value;
+    const amount = document.getElementById('Amount').value;
+    const bank = document.getElementById('Bank').value;
+    const number = document.getElementById('number').value;
+
+    const params = new URLSearchParams({
+      crypto,
+      network,
+      amount,
+      bank,
+      number
+    });
+
+    window.location.href = `sell-confirm.html?${params.toString()}`;
+  });
+</script>
+
+</html>

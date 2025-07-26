@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Transaction Processing</title>
+  <link rel="stylesheet" href="./css/sales.css">
+  <style>
+    .processing {
+      text-align: center;
+      padding: 60px;
+    }
+
+    .loader {
+      border: 6px solid #1a1a1a;
+      border-top: 6px solid yellow;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+      margin: 30px auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .processing h2 {
+      margin-top: 20px;
+      color:yellow;
+    }
+
+    .processing p {
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="form processing">
+    <div class="loader"></div>
+    <h2>Verifying Payment...</h2>
+    <p>This may take a few seconds. Please don’t refresh.</p>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    setTimeout(() => {
+      window.location.href = `success.html?${urlParams.toString()}`;
+    }, 4000);
+  </script>
+</body>
+</html>

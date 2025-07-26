@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Confirm Payment - Blakdhut</title>
+  <link rel="stylesheet" href="./css/sales.css">
+</head>
+<body>
+  <div class="form">
+    <h2>Confirm Your Payment</h2>
+    
+    <p><strong>Crypto:</strong> <span id="crypto"></span></p>
+    <p><strong>Network:</strong> <span id="network"></span></p>
+    <p><strong>Amount (USD):</strong> $<span id="amount"></span></p>
+    <p><strong>Wallet Address:</strong> <span id="address"></span></p>
+    
+    <hr>
+    <h3>Pay to:</h3>
+    <p><strong>Bank:</strong> Web Genius Bank</p>
+    <p><strong>Account Name:</strong> Blakdhut Global</p>
+    <p><strong>Account Number:</strong> 1234567890</p>
+
+    <button onclick="goToProcessing()">I've Made Payment</button>
+    <br><br>
+    <a href="buy.html" style="color: #ffee00;">← Go Back</a>
+  </div>
+
+
+<script>
+  function goToProcessing() {
+    const urlParams = new URLSearchParams(window.location.search);
+    window.location.href = `processing.html?${urlParams.toString()}`;
+  }
+</script>
+
+</body>
+</html>

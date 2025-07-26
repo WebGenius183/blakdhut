@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sell Confirmation - Blakdhut</title>
+  <link rel="stylesheet" href="./css/sales.css">
+</head>
+<body>
+  <div class="form">
+    <h2>Confirm Your Sale</h2>
+
+    <p><strong>Crypto:</strong> <span id="crypto"></span></p>
+    <p><strong>Network:</strong> <span id="network"></span></p>
+    <p><strong>Amount (USD):</strong> $<span id="amount"></span></p>
+    <p><strong>Wallet Address:</strong> 
+    <span id="address">25rq3q5t6y27275.....</span> 
+    <button onclick="copyAddress()" class="copy-btn">Copy</button>
+    </p>
+    
+
+    <hr>
+    <h3>Upload Proof of Transfer</h3>
+    <input type="file" id="proof" accept="image/*,application/pdf" />
+
+    <button onclick="goToProcessing()">Confirm</button>
+    <br><br>
+    <a href="sell.html" style="color: #ffee00;">← Go Back</a>
+  </div>
+
+  <script>
+    // Fill data from query params
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById('crypto').innerText = params.get('crypto') || 'N/A';
+    document.getElementById('network').innerText = params.get('network') || 'N/A';
+    document.getElementById('amount').innerText = params.get('amount') || '0.00';
+
+    function goToProcessing() {
+      alert("Proof submitted! Taking you to processing page...");
+      window.location.href = `processing.html?${params.toString()}`;
+    }
+  function goToProcessing() {
+    const urlParams = new URLSearchParams(window.location.search);
+    window.location.href = `processing.html?${urlParams.toString()}`;
+  }
+
+  function copyAddress() {
+    const address = document.getElementById("address").textContent;
+    navigator.clipboard.writeText(address).then(() => {
+      alert("Wallet address copied!");
+    }).catch(err => {
+      alert("Failed to copy!");
+    });
+  }
+</script>
+
+</body>
+</html>
