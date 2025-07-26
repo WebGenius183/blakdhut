@@ -43,6 +43,8 @@ button{
     border: 2px solid yellow;
     border-radius: 10px;
     background-color: yellow;   
+    font-weight: 700;
+    font-size: 15px;
 }
 
 .signup a{
@@ -51,14 +53,11 @@ button{
 
 .login{
     background-color: transparent;   
-}
-
-a{
     color: white;
-    text-decoration: none;
     font-weight: 700;
     font-size: 15px;
 }
+
 
 .hero{
     padding-left: 30px;
@@ -93,12 +92,11 @@ a{
     padding-left: 40px;
     padding-right: 40px;
     margin-top: 20px;
-}
-
-.left a{
     font-size: 25px;
     color: black;
+    font-weight: 700;
 }
+
 
 .right{
     width: 30%;

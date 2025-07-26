@@ -1,0 +1,170 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: #0f0f0f;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 15px;
+  min-height: 100vh;
+}
+
+/* Main Container */
+.form {
+  background-color: #1a1a1a;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 251, 0, 0.2);
+  width: 100%;
+  max-width: 450px;
+}
+
+h2, h3 {
+  color: yellow;
+  margin-bottom: 20px;
+}
+
+/* Form Labels & Inputs */
+form label {
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+form select,
+form input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background-color: #2a2a2a;
+  color: #fff;
+  font-size: 14px;
+}
+
+form select:focus,
+form input:focus {
+  outline: none;
+  border-color: yellow;
+  background-color: #1f1f1f;
+}
+
+/* Info Boxes */
+.amount, .rate {
+  margin-top: 16px;
+  padding: 10px;
+  background-color: #242424;
+  border-left: 4px solid yellow;
+  border-radius: 4px;
+}
+
+.rate span:last-child {
+  float: right;
+  font-weight: bold;
+  color: yellow;
+}
+
+/* Button */
+button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 12px;
+  background-color: yellow;
+  color: #0f0f0f;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: yellow;
+}
+
+
+p {
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #333;
+  margin: 20px 0;
+}
+
+a {
+  text-decoration: none;
+  font-size: 14px;
+  color: yellow;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+body {
+  background-color: #0d0d0d;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.form {
+  background-color: #1a1a1a;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.2);
+}
+
+h2, h3 {
+  color: #ffee00;
+}
+
+input[type="file"] {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #ffee00;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #e6d400;
+}
+
+a {
+  display: inline-block;
+  margin-top: 15px;
+  text-decoration: none;
+}
