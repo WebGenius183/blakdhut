@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" href="./logo.png" type="image/x-icon" />
   <link rel="stylesheet" href="./css/dashboard.css" />
+  <script src="https://kit.fontawesome.com/883ba9c28f.js" crossorigin="anonymous"></script>
+  <script src="./js/mood.js"></script>
+  <script src="./js/menu.js"></script>
   <title>Blakdhut Exchange</title>
 </head>
 <body>
@@ -22,6 +25,7 @@
       <a href="./referral.html">Referral</a>
       <a href="./history.html">History</a>
       <a href="./support.html">Support</a>
+      <button id="theme-toggle" class="menu-toggle"><i class="fa-solid fa-moon fa-2xs"></i></button>
     </nav>
   </div>
 </header>
@@ -31,81 +35,81 @@
   <main class="content">
     <h2>Hello, Emmanuel 👋</h2>
     <div class="actions">
-      <div class="action-item">
-        <a href="./sell.html">
-          <button><img src="./icons/up.png" alt="Sell" /></button>
-        </a>
-        <span>Sell</span>
-      </div>
-      <div class="action-item">
-        <a href="./buy.html">
-        <button><img src="./icons/down.png" alt="Buy" /></button>
-        </a>
-        <span>Buy</span>
-      </div>
-      <div class="action-item">
-        <a href="./history.html">
-        <button><img src="./icons/bill.png" alt="History" /></button>
-        </a>
-        <span>History</span>
-        
+      <div class="act">
+        <div class="action-item">
+          <a href="./sell.html">
+            <button><img src="./icons/up.png" alt="Sell" /></button>
+          </a>
+          <span>Sell</span>
+        </div>
+        <div class="action-item">
+          <a href="./buy.html">
+          <button><img src="./icons/down.png" alt="Buy" /></button>
+          </a>
+          <span>Buy</span>
+        </div>
+        <div class="action-item">
+          <a href="./history.html">
+          <button><img src="./icons/bill.png" alt="History" /></button>
+          </a>
+          <span>History</span>
+        </div>
       </div>
     </div>
   </main>
 
-  <div class="crypto-prices">
-    <table id="crypto-table">
-      <tbody id="crypto-tbody">
-        <tr><td colspan="3" style="text-align:center;">Loading...</td></tr>
-      </tbody>
-    </table>
+  <div class="wallet-container">
+    <div id="wallet-list" class="wallet-list">
+      <div class="loading">Loading...</div>
+    </div>
   </div>
+
+
 
   <footer>
     <small>&copy; 2025 Blakdhut Exchange. All rights reserved.</small>
   </footer>
 
-    <script>
+<script>
 document.addEventListener("DOMContentLoaded", () => {
-    let previousPrices = {};
+  const walletList = document.getElementById("wallet-list");
 
-    async function fetchCryptoData() {
-        const res = await fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=10&page=1");
-        const data = await res.json();
-        updateCryptoPrices(data);
+  async function fetchCoins() {
+    try {
+      const res = await fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=6&page=1");
+      const data = await res.json();
+      renderWallet(data);
+    } catch (error) {
+      walletList.innerHTML = "<div class='loading'>Failed to load data.</div>";
+      console.error("Error fetching coins:", error);
     }
+  }
 
-    function updateCryptoPrices(data) {
-        const tbody = document.querySelector("#crypto-tbody");
-        tbody.innerHTML = "";
+  function renderWallet(coins) {
+    walletList.innerHTML = "";
+    coins.forEach(coin => {
+      const changeClass = coin.price_change_percentage_24h > 0 ? "change-up" : "change-down";
+      const item = document.createElement("div");
+      item.className = "wallet-item";
+      item.innerHTML = `
+        <div class="asset-info">
+          <img src="${coin.image}" alt="${coin.name}" />
+          <div class="asset-names">
+            <span class="asset-name">${coin.name}</span>
+            <span class="asset-symbol">${coin.symbol.toUpperCase()}</span>
+          </div>
+        </div>
+        <div class="asset-values">
+          <div class="price">${coin.current_price.toFixed(2)}</div>
+          <div class="${changeClass}">${coin.price_change_percentage_24h.toFixed(2)}%</div>
+        </div>
+      `;
+      walletList.appendChild(item);
+    });
+  }
 
-        data.forEach((coin) => {
-            const prev = previousPrices[coin.id];
-            const current = coin.current_price;
-            let priceClass = "";
-
-            if (prev !== undefined) {
-                if (current > prev) priceClass = "price-up";
-                else if (current < prev) priceClass = "price-down";
-                else priceClass = previousPrices[coin.id + "_class"] || "";
-            }
-
-            previousPrices[coin.id] = current;
-            previousPrices[coin.id + "_class"] = priceClass;
-
-            const row = document.createElement("tr");
-            row.innerHTML = `
-                <td><img src="${coin.image}" alt="${coin.name}" width="20" style="vertical-align: middle;"> ${coin.name}</td>
-                <td>${coin.symbol.toUpperCase()}</td>
-                <td class="${priceClass}">$${current.toLocaleString()}</td>
-            `;
-            tbody.appendChild(row);
-        });
-    }
-
-    fetchCryptoData();
-    setInterval(fetchCryptoData, 5000);
-});
+  fetchCoins();
+  setInterval(fetchCoins, 10000);
 
   const menuToggle = document.getElementById('menuToggle');
   const menu = document.getElementById('menu');
@@ -120,6 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
     menu.classList.remove('show');
     menuToggle.classList.remove('hide'); 
   });
+});
 
 </script>
 
