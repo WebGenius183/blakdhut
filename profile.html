@@ -2,22 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Profile - Blakdhut</title>
-  <link rel="stylesheet" href="./css/profile.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="./css/dashboard.css" />
+  <script src="https://kit.fontawesome.com/883ba9c28f.js" crossorigin="anonymous"></script>
+  <script src="./js/mood.js"></script>
+  <script src="./js/menu.js"></script>
+  <title>Blakdhut Exchange</title>
 </head>
 <body>
-  <div class="profile-container">
-    <h2>User Profile</h2>
+<header class="navbar">
+  <a href="./index.html" class="logo">
+    <img src="./logo.png" alt="Blakdhut Logo" />
+  </a>
+  <button class="menu-toggle" id="menuToggle">&#9776;</button>
 
-    <div class="profile-card">
-      <p><strong>Full Name:</strong> John Doe</p>
-      <p><strong>Email:</strong> johndoe@example.com</p>
-      <p><strong>Phone Number:</strong> +234 812 345 6789</p>
-      <p><strong>KYC Status:</strong> <span class="kyc-status">Pending</span></p>
-    </div>
-
-    <a href="dashboard.html" class="back-btn">← Back to Dashboard</a>
+  <div class="overlay" id="menu">
+    <button class="close-btn" id="closeMenu">&times;</button>
+    <nav class="overlay-menu">
+      <a href="./profile.html">Profile</a>
+      <a href="./kyc.html">KYC</a>
+      <a href="./referral.html">Referral</a>
+      <a href="./history.html">History</a>
+      <a href="./support.html">Support</a>
+      <button id="theme-toggle" class="menu-toggle"><i class="fa-solid fa-moon fa-2xs"></i></button>
+    </nav>
   </div>
+</header>
+<body>
+  <main class="content">
+    <h2>Salau Emmanuel</h2>
+    <span>You need to verify your account</span>
+    <br>
+    <div class="actions">
+      <div class="acto">
+        <div class="buton">
+          <a href="">Verify Profile</a>
+        </div>
+        <div class="buton">
+          <a href="">Edit Profile</a>
+        </div>
+      </div>
+    </div>
+    <div class="statistics">
+      <div class="boxes">
+        <div class="box">
+          <span>Total Volume</span>
+          <h2>₦ 0</h2>
+        </div>
+        <div class="box">
+          <span>Favourite Coin </span>
+          <h2>BTC</h2>
+        </div>
+      </div>
+    </div>
+    <div class="options">
+    </label>
+    <a href="#">Forgot password?</a>
+    </div>
+  </main>
 </body>
 </html>

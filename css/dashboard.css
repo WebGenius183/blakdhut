@@ -13,6 +13,7 @@ body {
 footer,
 .wallet-container,
 .act,
+.acto,
 button,
 .overlay,
 .overlay-menu a,
@@ -122,12 +123,18 @@ body {
 
 .content h2 {
   font-size: 28px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   color: #f1f1f1;
   animation: bounce 2s infinite;
 }
 
+.content span {
+  margin-bottom: 50px;
+  color: #ff0000;
+}
+
 .actions {
+  margin-top: 10px;
   display: flex;
   justify-content: center;
   border-radius: 30px;
@@ -139,6 +146,9 @@ body {
   padding: 10px;
   box-shadow: 0 2px 2px rgba(196, 196, 2, 0.3);
   border-radius: 30px;
+  height: 100%;
+  max-height: 170px;
+  align-content: center;
 }
 
 .action-item {
@@ -307,6 +317,11 @@ body.light-mode .act {
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 }
 
+body.light-mode .acto {
+  background-color: #eee;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
 body.light-mode .action-item span {
   color: #333;
 }
@@ -355,6 +370,98 @@ body.light-mode .see-all {
   display: flex;
 }
 
+.profile{
+  display: flex;
+  width: 350px;
+  border-radius: 30px;
+  justify-content: space-between;
+}
+
+.buton{
+  width: 120px;
+  background-color: rgb(255, 255, 255);
+  padding: 15px;
+  border-radius: 15px;
+  font-size: 13px;
+  margin: auto;
+  transition: ease 1s ;
+}
+
+.acto{
+  display: flex;
+  background-color: #998f06;
+  padding: 12px;
+  border-radius: 30px;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 350px;
+}
+
+.buton:hover{
+  scale: 1.1;
+}
+
+.buton a{
+  color: Black;
+  text-decoration: none;
+  font-weight: 550;
+}
+
+.statistics{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.box{
+  width: 100%;
+  max-width: 150px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  padding: 15px;
+  align-content: center;
+  max-height: 100px;
+  height: 100%;
+  margin-bottom: 50px;
+}
+
+.boxes{
+  display: flex;
+  max-width: 350px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.box span{
+  color: black;
+}
+
+.box h2{
+  color: #000;
+  animation: none;
+  padding-top: 10px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: white;
+}
+
+.options a {
+  color: yellow;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.options a:hover {
+  text-decoration: underline;
+  color: #cab816;
+}
+
+
 
 @keyframes bounce {
   0%, 100% {
@@ -365,7 +472,6 @@ body.light-mode .see-all {
   }
 }
 
-/* Responsive */
 @media (max-width: 500px) {
   .actions {
     align-items: center;

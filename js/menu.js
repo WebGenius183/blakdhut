@@ -1,18 +1,15 @@
-  // Menu toggle
+document.addEventListener("DOMContentLoaded", () => { 
   const menuToggle = document.getElementById('menuToggle');
-  const closeMenu = document.getElementById('closeMenu');
   const menu = document.getElementById('menu');
+  const closeMenu = document.getElementById('closeMenu');
 
   menuToggle.addEventListener('click', () => {
-    menu.classList.add('active');
+    menu.classList.add('show');
+    menuToggle.classList.add('hide');
   });
 
   closeMenu.addEventListener('click', () => {
-    menu.classList.remove('active');
+    menu.classList.remove('show');
+    menuToggle.classList.remove('hide'); 
   });
-
-  // Theme toggle
-  const themeToggle = document.getElementById('theme-toggle');
-  themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-  });
+})
