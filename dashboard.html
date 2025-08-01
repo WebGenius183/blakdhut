@@ -75,14 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const walletList = document.getElementById("wallet-list");
 
   async function fetchCoins() {
-    try {
       const res = await fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=6&page=1");
       const data = await res.json();
       renderWallet(data);
-    } catch (error) {
-      walletList.innerHTML = "<div class='loading'>Failed to load data.</div>";
-      console.error("Error fetching coins:", error);
-    }
   }
 
   function renderWallet(coins) {

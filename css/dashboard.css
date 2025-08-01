@@ -7,6 +7,8 @@
 
 body {
   transition: background-color 1s ease, color11s ease;
+  height: 100%;
+  max-height: 100vh;
 }
 
 .navbar,
@@ -366,6 +368,11 @@ body.light-mode .see-all {
   color: #222;
 }
 
+body.light-mode .options a {
+  color: #abad0b;
+  font-weight: 600;
+}
+
 .div{
   display: flex;
 }
@@ -379,7 +386,7 @@ body.light-mode .see-all {
 
 .buton{
   width: 120px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(224, 224, 46);
   padding: 15px;
   border-radius: 15px;
   font-size: 13px;
@@ -389,7 +396,7 @@ body.light-mode .see-all {
 
 .acto{
   display: flex;
-  background-color: #998f06;
+  background-color: #ffffff;
   padding: 12px;
   border-radius: 30px;
   justify-content: space-between;
@@ -416,7 +423,7 @@ body.light-mode .see-all {
 
 .box{
   width: 100%;
-  max-width: 150px;
+  max-width: 120px;
   background-color: rgb(255, 255, 255);
   border-radius: 20px;
   padding: 15px;
@@ -428,7 +435,7 @@ body.light-mode .see-all {
 
 .boxes{
   display: flex;
-  max-width: 350px;
+  max-width: 250px;
   width: 100%;
   justify-content: space-between;
 }
@@ -441,6 +448,7 @@ body.light-mode .see-all {
   color: #000;
   animation: none;
   padding-top: 10px;
+  font-size: 20px;
 }
 
 .options {
@@ -461,6 +469,13 @@ body.light-mode .see-all {
   color: #cab816;
 }
 
+
+.forget{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 10px;
+}
 
 
 @keyframes bounce {
