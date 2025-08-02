@@ -16,7 +16,7 @@ body {
   background: #0c0c0c;
   color: white;
   display: flex;
-  height: 100vh;
+  max-height: 100vh;
   align-items: center;
   transition: background 0.3s ease, color 0.3s ease;
 }
@@ -26,6 +26,7 @@ body {
 }
 /* Main Container */
 .form {
+  margin-top: 50px;
   background-color: #1a1a1a;
   padding: 30px;
   border-radius: 12px;
@@ -33,6 +34,7 @@ body {
   width: 100%;
   max-width: 500px;
   transition: background 0.3s ease;
+  height: 100%;
 }
 
 body.light-mode .form {
