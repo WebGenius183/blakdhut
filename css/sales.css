@@ -1,21 +1,29 @@
-/* Reset and Base Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  --bg-color: #0e0e0e;
+  --text-color: #fff;
+  --form-bg: #1c1c1c;
+  --highlight: #ffee00;
+  --input-bg: #333;
+  --button-text: #000;
+  --hover-color: #ffcc00;
+  --file-bg: #222;
+  --file-border: #555;
 }
+
 
 body {
-  font-family: 'Roboto Condensed', sans-serif;
-  background-color: #0f0f0f;
-  color: #ffffff;
+  font-family: Arial, sans-serif;
+  background: #0c0c0c;
+  color: white;
   display: flex;
-  justify-content: center;
+  height: 100vh;
   align-items: center;
-  padding: 40px 15px;
-  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
+.navbar{
+  width: 100%;
+}
 /* Main Container */
 .form {
   background-color: #1a1a1a;
@@ -23,12 +31,24 @@ body {
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(255, 251, 0, 0.2);
   width: 100%;
-  max-width: 450px;
+  max-width: 500px;
+  transition: background 0.3s ease;
 }
 
+body.light-mode .form {
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
 h2, h3 {
-  color: yellow;
+  color: #ffee00;
   margin-bottom: 20px;
+}
+
+body.light-mode h2,
+body.light-mode h3 {
+  color: #333;
 }
 
 /* Form Labels & Inputs */
@@ -50,48 +70,87 @@ form input {
   font-size: 14px;
 }
 
+body.light-mode form input,
+body.light-mode form select {
+  background-color: #f0f0f0;
+  color: #111;
+  border: 1px solid #ccc;
+}
+
 form select:focus,
 form input:focus {
   outline: none;
-  border-color: yellow;
+  border-color: #ffee00;
   background-color: #1f1f1f;
 }
+
+body.light-mode form input:focus,
+body.light-mode form select:focus {
+  border-color: #333;
+  background-color: #eaeaea;
+}
+
+body.light-mode a{
+  color: black;
+}
+
 
 /* Info Boxes */
 .amount, .rate {
   margin-top: 16px;
   padding: 10px;
   background-color: #242424;
-  border-left: 4px solid yellow;
+  border-left: 4px solid #ffee00;
   border-radius: 4px;
+}
+
+body.light-mode .amount,
+body.light-mode .rate {
+  background-color: #f4f4f4;
+  border-left: 4px solid #ccc;
 }
 
 .rate span:last-child {
   float: right;
   font-weight: bold;
-  color: yellow;
+  color: #ffee00;
 }
 
-/* Button */
+body.light-mode .rate span:last-child {
+  color: #333;
+}
+
+/* Buttons */
 button {
-  width: 100%;
-  margin-top: 25px;
-  padding: 12px;
-  background-color: yellow;
-  color: #0f0f0f;
+  background: #ffee00;
+  color: black;
+  padding: 10px;
   border: none;
-  border-radius: 6px;
-  font-size: 16px;
+  border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-button:hover {
-  background-color: yellow;
+  margin-top: 10px;
 }
 
 
+/* File input */
+input[type="file"] {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+body.light-mode input[type="file"] {
+  background-color: #f1f1f1;
+  color: #111;
+  border: 1px dashed #bbb;
+}
+
+/* Text and Links */
 p {
   margin: 10px 0;
   line-height: 1.5;
@@ -107,64 +166,13 @@ hr {
 a {
   text-decoration: none;
   font-size: 14px;
-  color: yellow;
+  color: #ffee00;
 }
+
 a:hover {
   text-decoration: underline;
 }
 
-body {
-  background-color: #0d0d0d;
-  color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-
-.form {
-  background-color: #1a1a1a;
-  padding: 30px;
-  border-radius: 10px;
-  max-width: 500px;
-  width: 100%;
-  box-shadow: 0 0 10px rgba(255, 255, 0, 0.2);
-}
-
-h2, h3 {
-  color: #ffee00;
-}
-
-input[type="file"] {
-  background-color: #333;
-  color: white;
-  padding: 10px;
-  border: 1px solid #555;
-  border-radius: 5px;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-button {
-  background-color: #ffee00;
-  color: black;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  width: 100%;
-  margin-top: 10px;
-}
-
-button:hover {
-  background-color: #e6d400;
-}
-
-a {
-  display: inline-block;
-  margin-top: 15px;
-  text-decoration: none;
+body.light-mode a {
+  color: #444;
 }

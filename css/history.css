@@ -117,6 +117,7 @@ tbody td {
     margin-bottom: 1.5rem;
     border-radius: 10px;
     padding: 1rem;
+    background-color: #1e1e1e;
   }
 
   .light-mode tr {
