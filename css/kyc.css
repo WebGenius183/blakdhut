@@ -1,20 +1,27 @@
+
 body {
   font-family: Arial, sans-serif;
   background: #0c0c0c;
   color: white;
   display: flex;
-  align-items: center;
-  justify-content: center;
   height: 100vh;
+  align-items: center;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.navbar{
+  width: 100%;
+
 }
 
 .form {
+  margin-top: 50px;
   background: #1c1c1c;
   padding: 30px;
   border-radius: 10px;
   width: 100%;
   max-width: 400px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  transition: background 0.3s ease;
 }
 
 input, select {
@@ -29,7 +36,6 @@ button {
   background: #ffee00;
   color: black;
   padding: 10px;
-  width: 100%;
   border: none;
   border-radius: 5px;
   font-weight: bold;
@@ -37,9 +43,6 @@ button {
   margin-top: 10px;
 }
 
-button:hover {
-  background: #e6d800;
-}
 
 .hidden {
   display: none;
@@ -49,4 +52,23 @@ button:hover {
   margin-top: 15px;
   color: #fbff00;
   font-weight: bold;
+}
+
+body.light-mode {
+  background: #f4f4f4;
+  color: #222;
+}
+
+body.light-mode input{
+  background: #f4f4f4;
+  color: #222;
+}
+
+body.light-mode .form {
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode #confirmation {
+  color: #444;
 }

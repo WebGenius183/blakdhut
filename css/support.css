@@ -1,27 +1,41 @@
+:root {
+  --bg-color: #0e0e0e;
+  --text-color: #fff;
+  --form-bg: #1c1c1c;
+  --highlight: #ffee00;
+  --input-bg: #333;
+  --button-text: #000;
+  --hover-color: #ffcc00;
+  --file-bg: #222;
+  --file-border: #555;
+}
+
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #0e0e0e;
-  color: #fff;
+  font-family: Arial, sans-serif;
+  background: #0c0c0c;
+  color: white;
   display: flex;
-  justify-content: center;
+  height: 100vh;
   align-items: center;
-  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.navbar{
+  width: 100%;
 }
 
 .form {
-  background-color: #1c1c1c;
+  background-color: var(--form-bg);
   padding: 25px;
   border-radius: 12px;
   width: 100%;
   max-width: 500px;
-  box-shadow: 0 0 10px #ffee00;
+  box-shadow: 0 0 10px var(--highlight);
 }
 
 .form h2 {
   margin-bottom: 20px;
-  color: #ffee00;
+  color: var(--highlight);
 }
 
 .form p {
@@ -35,14 +49,15 @@ label {
   font-size: 14px;
 }
 
-input, textarea {
+input,
+textarea {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
-  border: none;
+  border: 2px solid black;
   border-radius: 6px;
-  background: #333;
-  color: #fff;
+  background: white;
+  color: var(--text-color);
 }
 
 textarea {
@@ -50,31 +65,94 @@ textarea {
 }
 
 button {
-  margin-top: 20px;
-  padding: 12px;
-  width: 100%;
-  background-color: #ffee00;
-  color: #000;
+  background: #ffee00;
+  color: black;
+  padding: 10px;
   border: none;
-  border-radius: 6px;
+  border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s;
+  margin-top: 10px;
 }
 
-button:hover {
-  background-color: #ffcc00;
-}
 
-input[type="file"] {
+input[type='file'] {
   margin-top: 5px;
-  background-color: #222;
+  background-color: var(--file-bg);
   padding: 8px;
   border-radius: 6px;
-  color: #fff;
-  border: 1px dashed #555;
+  color: var(--text-color);
+  border: 1px dashed var(--file-border);
 }
 
+.form {
+  margin-top: 50px;
+  background: #1c1c1c;
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  transition: background 0.3s ease;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  background: #ffee00;
+  color: black;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+#confirmation {
+  margin-top: 15px;
+  color: #a8aa3b;
+  font-weight: bold;
+}
+
+body.light-mode {
+  background: #f4f4f4;
+  color: #222;
+}
+
+
+body.light-mode h2 {
+  color: #222;
+}
+body.light-mode input {
+  background: #f4f4f4;
+  color: #222;
+}
+
+body.light-mode .textarea {
+  background: #f4f4f4;
+  color: #962121;
+}
+
+body.light-mode .form {
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode #confirmation {
+  color: #fffdfd;
+}
+ 
 
 @media (max-width: 480px) {
   .form {

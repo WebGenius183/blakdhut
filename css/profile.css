@@ -1,51 +1,87 @@
 body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #000;
-  color: #fff;
+  font-family: Arial, sans-serif;
+  background: #0c0c0c;
+  color: white;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  padding: 2rem;
+  transition: background 0.3s ease, color 0.3s ease;
+  padding: 20px;
   min-height: 100vh;
 }
 
-.profile-container {
-  background: #111;
-  padding: 2rem;
-  border-radius: 12px;
-  max-width: 450px;
+.navbar {
   width: 100%;
-  box-shadow: 0 0 15px #ffee00;
-  text-align: center;
+  text-align: right;
+  padding: 10px 20px;
 }
 
-.profile-container h2 {
-  margin-bottom: 1.5rem;
+body.light-mode {
+  background-color: #f9f9f9;
+  color: #111;
+}
+
+.edit-container {
+  margin-top: 50px;
+  max-width: 500px;
+  width: 100%;
+  background: #111;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 238, 0, 0.3);
+}
+
+body.light-mode .edit-container {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
   color: #ffee00;
+  margin-bottom: 20px;
 }
 
-.profile-card p {
-  margin: 0.8rem 0;
-  font-size: 1.1rem;
-  border-bottom: 1px solid #333;
-  padding-bottom: 0.5rem;
+body.light-mode h2 {
+  color: #333;
 }
 
-.kyc-status {
-  color: orange;
-  font-weight: bold;
+.edit-form label {
+  display: block;
+  margin: 12px 0 5px;
 }
 
-.back-btn {
+.edit-form input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #222;
+  color: #fff;
+}
+
+body.light-mode .edit-form input {
+  background: #f1f1f1;
+  color: #000;
+}
+
+.edit-form button {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #ffee00;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.back-link {
   display: inline-block;
-  margin-top: 2rem;
-  text-decoration: none;
+  margin-top: 20px;
   color: #ffee00;
-  font-weight: bold;
-  transition: 0.3s;
+  text-decoration: none;
 }
 
-.back-btn:hover {
-  text-decoration: underline;
+body.light-mode .back-link {
+  color: #444;
 }

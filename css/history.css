@@ -1,11 +1,21 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #111;
-  color: #fff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
 }
 
+.light-mode {
+  background-color: #f9f9f9;
+  color: #000;
+}
+
+.dark-mode {
+  background-color: #111;
+  color: #fff;
+}
+
+/* Shared styles */
 .history-container {
   padding: 2rem;
   max-width: 1000px;
@@ -14,18 +24,20 @@ body {
 
 .history-container h2 {
   text-align: center;
-  color: #ffee00;
   margin-bottom: 2rem;
+}
+
+.light-mode .history-container h2 {
+  color: #222;
+}
+
+.dark-mode .history-container h2 {
+  color: #ffee00;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  color: #fff;
-}
-
-thead {
-  background-color: #222;
 }
 
 thead th {
@@ -34,8 +46,26 @@ thead th {
   border-bottom: 2px solid #ffee00;
 }
 
+.light-mode thead {
+  background-color: #ddd;
+  color: #000;
+}
+
+.dark-mode thead {
+  background-color: #222;
+  color: #fff;
+}
+
 tbody tr {
-  border-bottom: 1px solid #444;
+  border-bottom: 1px solid;
+}
+
+.light-mode tbody tr {
+  border-color: #ccc;
+}
+
+.dark-mode tbody tr {
+  border-color: #444;
 }
 
 tbody td {
@@ -44,7 +74,7 @@ tbody td {
 }
 
 .status-success {
-  color: #00ff00;
+  color: #00c000;
   font-weight: bold;
 }
 
@@ -58,22 +88,21 @@ tbody td {
   font-weight: bold;
 }
 
-.button{
-    border: 2px solid yellow;
-    padding: 10px;
-    width: 200px;
-    background-color: yellow;
-    border-radius: 20px;
-    margin: 10px;
-    text-align: center;
+.button {
+  border: 2px solid yellow;
+  padding: 10px;
+  width: 200px;
+  background-color: yellow;
+  border-radius: 20px;
+  margin: 10px;
+  text-align: center;
 }
 
-.button a{
-    text-decoration: none;
-    font-weight: 700;
-    color: black;
+.button a {
+  text-decoration: none;
+  font-weight: 700;
+  color: black;
 }
-
 
 @media screen and (max-width: 768px) {
   table, thead, tbody, th, td, tr {
@@ -86,9 +115,16 @@ tbody td {
 
   tr {
     margin-bottom: 1.5rem;
-    background-color: #1e1e1e;
     border-radius: 10px;
     padding: 1rem;
+  }
+
+  .light-mode tr {
+    background-color: #eee;
+  }
+
+  .dark-mode tr {
+    background-color: #1e1e1e;
   }
 
   td {
@@ -101,8 +137,15 @@ tbody td {
     content: attr(data-label);
     position: absolute;
     left: 1rem;
-    color: #ffee00;
     font-weight: bold;
     text-align: left;
+  }
+
+  .light-mode td::before {
+    color: #333;
+  }
+
+  .dark-mode td::before {
+    color: #ffee00;
   }
 }

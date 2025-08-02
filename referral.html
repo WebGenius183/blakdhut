@@ -4,9 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Referral - Blakdhut</title>
+    <script src="./js/mood.js"></script>
+  <script src="./js/menu.js"></script>
+  <link rel="stylesheet" href="./css/dashboard.css" />
   <link rel="stylesheet" href="./css/referral.css">
+  <script src="https://kit.fontawesome.com/883ba9c28f.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  <header class="navbar">
+  <a href="./index.html" class="logo">
+    <img src="./logo.png" alt="Blakdhut Logo" />
+  </a>
+  <button class="menu-toggle" id="menuToggle">&#9776;</button>
+
+  <div class="overlay" id="menu">
+    <button class="close-btn" id="closeMenu">&times;</button>
+    <nav class="overlay-menu">
+      <a href="./profile.html">Profile</a>
+      <a href="./kyc.html">KYC</a>
+      <a href="./referral.html">Referral</a>
+      <a href="./history.html">History</a>
+      <a href="./support.html">Support</a>
+      <button id="theme-toggle" class="menu-toggle"><i class="fa-solid fa-moon fa-2xs"></i></button>
+    </nav>
+  </div>
+</header>
   <div class="referral-container">
     <h2>Invite & Earn</h2>
     <p>Share your referral link with friends and earn rewards when they sign up and trade.</p>

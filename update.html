@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Profile</title>
+  <link rel="stylesheet" href="./css/dashboard.css" />
+  <link rel="stylesheet" href="./css/profile.css" />
+    <script src="./js/mood.js"></script>
+  <script src="./js/menu.js"></script>
+</head>
+<body>
+    <header class="navbar">
+  <a href="./index.html" class="logo">
+    <img src="./logo.png" alt="Blakdhut Logo" />
+  </a>
+  <button class="menu-toggle" id="menuToggle">&#9776;</button>
+
+  <div class="overlay" id="menu">
+    <button class="close-btn" id="closeMenu">&times;</button>
+    <nav class="overlay-menu">
+      <a href="./profile.html">Profile</a>
+      <a href="./kyc.html">KYC</a>
+      <a href="./referral.html">Referral</a>
+      <a href="./history.html">History</a>
+      <a href="./support.html">Support</a>
+      <button id="theme-toggle" class="menu-toggle"><i class="fa-solid fa-moon fa-2xs"></i></button>
+    </nav>
+  </div>
+</header>
+
+
+  <div class="edit-container">
+    <h2>Edit Profile</h2>
+    <form class="edit-form">
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="Enter username" />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter email" />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter new password" />
+
+      <button type="submit">Save Changes</button>
+    </form>
+    <a href="dashboard.html" class="back-link">← Back to Dashboard</a>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+    });
+  </script>
+</body>
+</html>

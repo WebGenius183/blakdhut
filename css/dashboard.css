@@ -11,18 +11,6 @@ body {
   max-height: 100vh;
 }
 
-.navbar,
-footer,
-.wallet-container,
-.act,
-.acto,
-button,
-.overlay,
-.overlay-menu a,
-.see-all {
-  transition: background-color 1s ease, color 0.3s ease, border 1s ease, box-shadow 1s ease;
-}
-
 
 body {
   background-color: #0b0b0c;
@@ -313,6 +301,12 @@ body.light-mode .overlay-menu a:hover {
 body.light-mode .content h2 {
   color: #222;
 }
+
+body.light-mode .history-container h2 {
+  color: #222;
+}
+
+
 
 body.light-mode .act {
   background-color: #eee;

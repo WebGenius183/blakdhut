@@ -1,14 +1,24 @@
-body {
+ody {
   font-family: Arial, sans-serif;
-  background-color: #000;
-  color: #fff;
+  background: #0c0c0c;
+  color: white;
   display: flex;
-  justify-content: center;
+  height: 100vh;
   align-items: center;
-  padding: 30px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.navbar{
+  width: 100%;
+
+}
+
+body.light-mode {
+  background-color: #f9f9f9;
+  color: #111;
 }
 
 .referral-container {
+  margin-top: 50px;
   max-width: 500px;
   width: 100%;
   background: #111;
@@ -17,9 +27,20 @@ body {
   box-shadow: 0 0 10px rgba(255, 238, 0, 0.3);
 }
 
+
+body.light-mode .referral-container {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 h2 {
   color: #ffee00;
   margin-bottom: 10px;
+}
+
+
+body.light-mode h2 {
+  color: #333;
 }
 
 .referral-box {
@@ -34,6 +55,11 @@ h2 {
   border-radius: 6px 0 0 6px;
   background: #222;
   color: #fff;
+}
+
+body.light-mode .referral-box input {
+  background: #f1f1f1;
+  color: #000;
 }
 
 .referral-box button {
@@ -53,9 +79,18 @@ h2 {
   line-height: 1.6;
 }
 
+body.light-mode .ref-stats {
+  background-color: #f4f4f4;
+  color: #222;
+}
+
 .back-link {
   display: inline-block;
   margin-top: 20px;
   color: #ffee00;
   text-decoration: none;
+}
+
+body.light-mode .back-link {
+  color: #444;
 }
